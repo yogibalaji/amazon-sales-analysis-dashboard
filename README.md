@@ -1,129 +1,141 @@
-# 📊 Amazon Sales Analysis Dashboard (Power BI)
+# Amazon Sales Analysis Dashboard
 
-This project presents a complete end-to-end Power BI dashboard built to analyze Amazon’s sales performance, including YTD revenue, product/category insights, and customer review trends. The dashboard helps uncover patterns that improve business decision-making and identifies key growth areas across the platform.
+## Project Overview
 
----
+This project is an interactive Amazon Product Sales Analysis Dashboard developed using Power BI to analyze sales performance, customer reviews, product categories, and key business metrics.
 
-## 🚀 Project Overview
+The dashboard provides insights into:
 
-The goal of this project was to transform raw Amazon sales data into a fully interactive analytics dashboard.  
-The analysis uncovered:
+- Year-to-Date (YTD) Sales
+- Quarter-to-Date (QTD) Sales
+- Weekly and Monthly Sales Trends
+- Product Category Performance
+- Top Selling Products
+- Product Review Analysis
 
-- **$2.18M+ YTD sales**
-- **$811K+ QTD sales**
-- **28K+ total units sold**
-- **19.4M+ customer reviews analyzed**
-
----
-
-## 📸 Dashboard Preview
-
-### 🟦 Overview Dashboard
-![Overview Dashboard](Dashboard_Screenshots/overview_dashboard.png)
-
-### 🟩 Dataset Preview  
-![Dataset Preview](Dashboard_Screenshots/dataset_preview.png)
+The project enables businesses to make data-driven decisions by identifying high-performing products, monitoring sales trends, and understanding customer behavior patterns.
 
 ---
 
-## 🎯 Key Insights
+## Objectives
 
-- Category-level analysis identified products contributing more than **55% of total revenue**.
-- High-rating items showed a **32% higher average sales volume**.
-- Demand trends showed clear **festival season spikes** and monthly performance patterns.
-- Product-level drilldown improved decision clarity by **40%** compared to raw data tables.
-
----
-
-## 🛠️ Tech Stack Used
-
-- Power BI Desktop  
-- Power Query (ETL)  
-- Power BI Data Modelling  
-- DAX (Minimal usage)  
-- Excel  
-- Visualization & Report Design Principles  
+- Analyze Amazon product sales data
+- Identify top-performing product categories
+- Track monthly and weekly sales trends
+- Evaluate customer review patterns
+- Develop an interactive dashboard for business insights
 
 ---
 
-## 📂 Project Structure
+## Tools and Technologies Used
 
-📁 Amazon-Sales-Analysis-Dashboard  
-│── Amazon_Sales_Analysis.pbix  
-│── Amazon_Dataset.xlsx  
-│── Dashboard_Screenshots/  
-│      ├── overview_dashboard.png  
-│      ├── dataset_preview.png  
-│── README.md  
-
----
-
-## 🔧 Data Preparation & Modelling
-
-### ✔ Data Cleaning (Power Query)
-- Removed duplicates  
-- Fixed category inconsistencies  
-- Standardized date formats  
-- Filled missing data where required  
-- Normalized numeric fields  
-
-### ✔ Data Modelling (Star Schema)
-
-**Fact Table:**  
-- Sales Fact (Revenue, Units, Reviews, Ratings)
-
-**Dimension Tables:**  
-- Date Dimension  
-- Product Details  
-- Category Details  
-- Rating Dimension  
-
-### ✔ Core DAX Measures
-- Total Sales  
-- Total Units Sold  
-- Average Rating  
-- YTD Sales  
-- Category Contribution %  
+| Tool | Purpose |
+|------|----------|
+| Power BI | Dashboard Development |
+| Excel | Data Source |
+| SQL | Data Analysis |
+| DAX | KPI Calculations |
+| Power Query | Data Cleaning and Transformation |
 
 ---
 
-## 📊 Dashboard Features
+## Dataset Information
 
-### 1️⃣ Sales Performance Overview  
-### 2️⃣ Category Breakdown  
-### 3️⃣ Product-Level Insights  
-### 4️⃣ Time-Based Trends  
+The dataset includes:
 
----
-
-## 📥 How to Use the Project
-
-```bash
-git clone https://github.com/Umang0210/Amazon-Sales-Analysis-Dashboard-Power-BI.git
-```
-
-Open the `.pbix` file in **Power BI Desktop**.
+- Product Categories
+- Sales Data
+- Product Reviews
+- Weekly Sales Records
+- Monthly Revenue Data
+- Product Performance Metrics
 
 ---
 
-## 📌 Future Enhancements
+## Dashboard Features
 
-- Add forecasting  
-- Expand product metadata  
-- Power BI Service integration  
-- Drill-through diagnostic pages  
+### KPI Metrics
+
+- YTD Sales: $2.18M
+- QTD Sales: $811.09K
+- Products Sold: 28K
+- Total Reviews: 19.42M
+
+### Visualizations
+
+- Monthly Sales Trend Analysis
+- Weekly Sales Distribution
+- Sales by Product Category
+- Top 5 Products by YTD Sales
+- Top 5 Products by YTD Reviews
+
+### Interactive Filters
+
+- Product Category Filter
+- Quarter Selection Filter
 
 ---
 
-## 🙌 Acknowledgements
+## Key Business Insights
 
-Inspired by real-world e-commerce analytics and BI reporting practices.
+- Men Shoes generated the highest overall sales revenue.
+- Sales performance increased significantly between September and December.
+- Products with higher customer reviews demonstrated stronger sales performance.
+- Camera and Mobile Accessories categories showed strong quarterly growth.
 
 ---
 
-## 📫 Contact
+## Dashboard Preview
 
-**Umang Garg**  
-📧 Email: umanggarg0210@gmail.com  
-🔗 LinkedIn: linkedin.com/in/umanggarg0210  
-🐙 GitHub: github.com/Umang0210
+![Dashboard Preview](images/dashboard.png)
+
+---
+
+## DAX Measures Used
+
+```DAX
+YTD Sales = 
+TOTALYTD(
+    SUM(Sales[Amount]),
+    Calendar[Date]
+)
+
+QTD Sales = 
+TOTALQTD(
+    SUM(Sales[Amount]),
+    Calendar[Date]
+)
+
+Total Reviews = 
+SUM(Sales[Reviews])
+
+Products Sold = 
+SUM(Sales[Quantity])
+SQL Analysis Performed
+Sales Trend Analysis
+Category-wise Revenue Analysis
+Top Product Identification
+Review and Rating Analysis
+Weekly and Monthly Performance Tracking
+KPI Calculations using Aggregate Functions
+Window Function Analysis for Growth Trends
+Future Enhancements
+Integrate forecasting using Power BI AI visuals
+Implement real-time data integration
+Deploy dashboard using Power BI Service
+Add customer segmentation analysis
+Create mobile-responsive dashboard views
+Repository Structure
+amazon-sales-analysis-dashboard/
+│
+├── data/
+├── dashboard/
+├── sql/
+├── images/
+├── docs/
+├── README.md
+└── LICENSE
+Author
+
+Yogi Balaji
+Data Analyst | Power BI Developer | SQL Enthusiast
